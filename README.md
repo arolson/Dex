@@ -1,3 +1,9 @@
+# Dex
+<p>
+Is an experiment into cryptocurreny being based on the Monero and Cryptonote opensource projects.
+</p>
+May 2017
+
 # Monero
 
 Copyright (c) 2014-2017, The Monero Project
