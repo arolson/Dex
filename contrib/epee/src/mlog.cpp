@@ -136,12 +136,12 @@ void mlog_configure(const std::string &filename_base, bool console)
     rename(name, rname.c_str());
   });
   mlog_set_common_prefix();
-  const char *monero_log = getenv("MONERO_LOGS");
-  if (!monero_log)
+  const char *dex_log = getenv("MONERO_LOGS");
+  if (!dex_log)
   {
-    monero_log = get_default_categories(0);
+    dex_log = get_default_categories(0);
   }
-  mlog_set_categories(monero_log);
+  mlog_set_categories(dex_log);
 }
 
 void mlog_set_categories(const char *categories)

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2017, The Monero Project
+# Copyright (c) 2014-2017, The Dex Project
 #
 # All rights reserved.
 #
@@ -68,9 +68,9 @@ set(crypto_private_headers
   skein.h
   skein_port.h)
 
-monero_private_headers(crypto
+dex_private_headers(crypto
   ${crypto_private_headers})
-monero_add_library(crypto
+dex_add_library(crypto
   ${crypto_sources}
   ${crypto_headers}
   ${crypto_private_headers})

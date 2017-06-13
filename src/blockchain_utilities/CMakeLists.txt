@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2017, The Monero Project
+# Copyright (c) 2014-2017, The Dex Project
 #
 # All rights reserved.
 #
@@ -39,7 +39,7 @@ set(blockchain_import_private_headers
   bootstrap_serialization.h
   )
 
-monero_private_headers(blockchain_import
+dex_private_headers(blockchain_import
 	  ${blockchain_import_private_headers})
 
 set(blockchain_export_sources
@@ -54,7 +54,7 @@ set(blockchain_export_private_headers
   bootstrap_serialization.h
   )
 
-monero_private_headers(blockchain_export
+dex_private_headers(blockchain_export
 	  ${blockchain_export_private_headers})
 
 
@@ -63,7 +63,7 @@ set(cn_deserialize_sources
   )
 
 
-monero_add_executable(blockchain_import
+dex_add_executable(blockchain_import
   ${blockchain_import_sources}
   ${blockchain_import_private_headers})
 
@@ -88,9 +88,9 @@ add_dependencies(blockchain_import
 	version)
 set_property(TARGET blockchain_import
 	PROPERTY
-	OUTPUT_NAME "monero-blockchain-import")
+	OUTPUT_NAME "dex-blockchain-import")
 
-monero_add_executable(blockchain_export
+dex_add_executable(blockchain_export
   ${blockchain_export_sources}
   ${blockchain_export_private_headers})
 
@@ -110,9 +110,9 @@ add_dependencies(blockchain_export
 	version)
 set_property(TARGET blockchain_export
 	PROPERTY
-	OUTPUT_NAME "monero-blockchain-export")
+	OUTPUT_NAME "dex-blockchain-export")
 
-monero_add_executable(cn_deserialize
+dex_add_executable(cn_deserialize
   ${cn_deserialize_sources}
   ${cn_deserialize_private_headers})
 
@@ -128,5 +128,5 @@ add_dependencies(cn_deserialize
 	version)
 set_property(TARGET cn_deserialize
 	PROPERTY
-	OUTPUT_NAME "monero-utils-deserialize")
+	OUTPUT_NAME "dex-utils-deserialize")
 

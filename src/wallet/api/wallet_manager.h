@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Monero Project
+// Copyright (c) 2014-2017, The Dex Project
 //
 // All rights reserved.
 //
@@ -32,7 +32,7 @@
 #include "wallet/wallet2_api.h"
 #include <string>
 
-namespace Monero {
+namespace Dex {
 
 class WalletManagerImpl : public WalletManager
 {
@@ -74,4 +74,4 @@ private:
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitdex = Dex;

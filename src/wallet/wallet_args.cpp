@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Monero Project
+// Copyright (c) 2014-2017, The Dex Project
 //
 // All rights reserved.
 //
@@ -104,7 +104,7 @@ namespace wallet_args
     command_line::add_arg(desc_params, arg_max_concurrency);
     command_line::add_arg(desc_params, arg_config_file);
 
-    i18n_set_language("translations", "monero", lang);
+    i18n_set_language("translations", "dex", lang);
 
     po::options_description desc_all;
     desc_all.add(desc_general).add(desc_params);
@@ -149,21 +149,21 @@ namespace wallet_args
 
     if (command_line::get_arg(vm, command_line::arg_help))
     {
-      tools::msg_writer() << "Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
+      tools::msg_writer() << "Dex '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
       tools::msg_writer() << wallet_args::tr("Usage:") << ' ' << usage;
       tools::msg_writer() << desc_all;
       return boost::none;
     }
     else if (command_line::get_arg(vm, command_line::arg_version))
     {
-      tools::msg_writer() << "Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
+      tools::msg_writer() << "Dex '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
       return boost::none;
     }
 
     if(command_line::has_arg(vm, arg_max_concurrency))
       tools::set_max_concurrency(command_line::get_arg(vm, arg_max_concurrency));
 
-    tools::scoped_message_writer(epee::console_color_white, true) << "Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
+    tools::scoped_message_writer(epee::console_color_white, true) << "Dex '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")";
 
     if (!vm["log-level"].defaulted())
       MINFO("Setting log level = " << command_line::get_arg(vm, arg_log_level));

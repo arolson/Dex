@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Monero Project
+// Copyright (c) 2014-2017, The Dex Project
 //
 // All rights reserved.
 //
@@ -208,17 +208,17 @@ namespace cryptonote
   {
     std::vector<std::string> records;
 
-    // All four MoneroPulse domains have DNSSEC on and valid
-    static const std::vector<std::string> dns_urls = { "checkpoints.moneropulse.se"
-						     , "checkpoints.moneropulse.org"
-						     , "checkpoints.moneropulse.net"
-						     , "checkpoints.moneropulse.co"
+    // All four DexPulse domains have DNSSEC on and valid
+    static const std::vector<std::string> dns_urls = { "checkpoints.dexpulse.se"
+						     , "checkpoints.dexpulse.org"
+						     , "checkpoints.dexpulse.net"
+						     , "checkpoints.dexpulse.co"
     };
 
-    static const std::vector<std::string> testnet_dns_urls = { "testpoints.moneropulse.se"
-							     , "testpoints.moneropulse.org"
-							     , "testpoints.moneropulse.net"
-							     , "testpoints.moneropulse.co"
+    static const std::vector<std::string> testnet_dns_urls = { "testpoints.dexpulse.se"
+							     , "testpoints.dexpulse.org"
+							     , "testpoints.dexpulse.net"
+							     , "testpoints.dexpulse.co"
     };
 
     if (!tools::dns_utils::load_txt_records_from_dns(records, testnet ? testnet_dns_urls : dns_urls))

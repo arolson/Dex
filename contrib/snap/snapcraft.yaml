@@ -1,31 +1,31 @@
-name: monero
+name: dex
 version: 0.10.2-1
-summary: "Monero: the secure, private, untraceable cryptocurrency https://getmonero.org"
+summary: "Dex: the secure, private, untraceable cryptocurrency https://getdex.org"
 description: |
-    Monero is a private, secure, untraceable, decentralised digital currency.
+    Dex is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    monerod:
+    dexd:
         daemon: forking
         command: |
-          monerod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/monerod.conf
+          dexd-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/dexd.conf
         plugs:
             - network
             - network-bind
-    monero-wallet-rpc:
+    dex-wallet-rpc:
         command: |
-          monero-wallet-rpc --log-file ${SNAP_USER_DATA}
+          dex-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    monero-wallet-cli:
+    dex-wallet-cli:
         command: |
-          monero-wallet-cli --log-file ${SNAP_USER_DATA}
+          dex-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -68,8 +68,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/monerod.conf: etc/monerod.conf
-            contrib/snap/monerod-wrapper: bin/monerod-wrapper
+            contrib/snap/dexd.conf: etc/dexd.conf
+            contrib/snap/dexd-wrapper: bin/dexd-wrapper
         prime:
             - etc
             - bin

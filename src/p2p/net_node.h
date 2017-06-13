@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Monero Project
+// Copyright (c) 2014-2017, The Dex Project
 //
 // All rights reserved.
 //
@@ -128,10 +128,10 @@ namespace nodetool
     virtual std::map<uint32_t, time_t> get_blocked_ips() { CRITICAL_REGION_LOCAL(m_blocked_ips_lock); return m_blocked_ips; }
   private:
     const std::vector<std::string> m_seed_nodes_list =
-    { "seeds.moneroseeds.se"
-    , "seeds.moneroseeds.ae.org"
-    , "seeds.moneroseeds.ch"
-    , "seeds.moneroseeds.li"
+    { "seeds.dexseeds.se"
+    , "seeds.dexseeds.ae.org"
+    , "seeds.dexseeds.ch"
+    , "seeds.dexseeds.li"
     };
 
     bool islimitup=false;
