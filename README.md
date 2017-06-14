@@ -1,111 +1,22 @@
 # Dex
 <p>
-Is an experiment into cryptocurreny being based on the Dex and Cryptonote opensource projects.
+Is an experiment into cryptocurreny being based on the Monero and Cryptonote opensource projects.
+
+May 2017 The Dex Project
 </p>
-May 2017
-
-# Dex
-
-Copyright (c) 2014-2017, The Dex Project
-
-## Development Resources
-
-- Web: [getdex.org](https://getdex.org)
-- Forum: [forum.getdex.org](https://forum.getdex.org)
-- Mail: [dev@getdex.org](mailto:dev@getdex.org)
-- GitHub: [https://github.com/dex-project/dex](https://github.com/dex-project/dex)
-- IRC: [#dex-dev on Freenode](http://webchat.freenode.net/?randomnick=1&channels=%23dex-dev&prompt=1&uio=d4)
-
-## Build
-
-| Operating System      | Processor | Status |
-| --------------------- | -------- |--------|
-| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.getdex.org/png?builder=dex-static-ubuntu-i686)](https://build.getdex.org/builders/dex-static-ubuntu-i686)
-| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.getdex.org/png?builder=dex-static-ubuntu-amd64)](https://build.getdex.org/builders/dex-static-ubuntu-amd64)
-| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.getdex.org/png?builder=dex-static-ubuntu-arm7)](https://build.getdex.org/builders/dex-static-ubuntu-arm7)
-| Debian Stable         |  armv8   | [![Debian armv8](https://build.getdex.org/png?builder=dex-static-debian-armv8)](https://build.getdex.org/builders/dex-static-debian-armv8)
-| OSX 10.10             |  amd64   | [![OSX 10.10 amd64](https://build.getdex.org/png?builder=dex-static-osx-10.10)](https://build.getdex.org/builders/dex-static-osx-10.10)
-| OSX 10.11             |  amd64   | [![OSX 10.11 amd64](https://build.getdex.org/png?builder=dex-static-osx-10.11)](https://build.getdex.org/builders/dex-static-osx-10.11)
-| OSX 10.12             |  amd64   | [![OSX 10.12 amd64](https://build.getdex.org/png?builder=dex-static-osx-10.12)](https://build.getdex.org/builders/dex-static-osx-10.12)
-| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.getdex.org/png?builder=dex-static-freebsd64)](https://build.getdex.org/builders/dex-static-freebsd64)
-| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.getdex.org/png?builder=dex-static-dragonflybsd-amd64)](https://build.getdex.org/builders/dex-static-dragonflybsd-amd64)
-| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.getdex.org/png?builder=dex-static-win32)](https://build.getdex.org/builders/dex-static-win32)
-| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.getdex.org/png?builder=dex-static-win64)](https://build.getdex.org/builders/dex-static-win64)
-
-## Coverage
-
-| Type      | Status |
-|-----------|--------|
-| Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
-| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/dex-project/dex/badge.svg?branch=master)](https://coveralls.io/github/dex-project/dex?branch=master)
-| License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Introduction
 
-Dex is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+The emergence of blockchain and open ledger adoption by the masses has opened the doors to solutions previously marginalized for the prevention of identity theft. A hybrid version of blockchain networks and open ledger technology presents the answer which can end identity theft.
 
-**Privacy:** Dex uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
+## Summary
+ 
+The technology we propose allows anyone in the world with a smartphone to enter themselves into a secure blockchain and open ledger system with a fingerprint and photo (taken in-app). Other documents are also allowed into the system for each person.
+ 
+Retailers can make money helping their customers use this system for transactions! Miners (only verification) will make money from the system.
+ 
+An exchange and wallet will be available to convert any fiat or cryptocurrency into our cryptocurrency “Dex” central to our system. Fees for conversion will be lower than commonly found to-date at a fraction of current rates because our cryptocurrency has transaction fees built in.
 
-**Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
-
-**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Dex is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
-
-## About this Project
-
-This is the core implementation of Dex. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Dex that uses the protocol and network in a compatible manner.
-
-As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
-
-**Anyone is welcome to contribute to Dex's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
-
-## Supporting the Project
-
-Dex development can be supported directly through donations.
-
-Both Dex and Bitcoin donations can be made to donate.getdex.org if using a client that supports the [OpenAlias](https://openalias.org) standard
-
-The Dex donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
-
-The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
-
-*Note: you can easily donate IDX to the Dex donation address by using the `donate` command. Type `help` in the command-line wallet for details.*
-
-Core development funding and/or some supporting services are also graciously provided by sponsors:
-
-[<img width="80" src="https://static.getdex.org/images/sponsors/mydex.png"/>](https://mydex.com)
-[<img width="150" src="https://static.getdex.org/images/sponsors/kitware.png?1"/>](http://kitware.com)
-[<img width="100" src="https://static.getdex.org/images/sponsors/dome9.png"/>](http://dome9.com)
-[<img width="150" src="https://static.getdex.org/images/sponsors/araxis.png"/>](http://araxis.com)
-[<img width="150" src="https://static.getdex.org/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
-[<img width="150" src="https://static.getdex.org/images/sponsors/navicat.png"/>](http://www.navicat.com/)
-[<img width="150" src="https://static.getdex.org/images/sponsors/symas.png"/>](http://www.symas.com/)
-
-There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
-
-## License
-
-See [LICENSE](LICENSE).
-
-# Contributing
-
-If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidelines.
-
-## Vulnerability Response Process
-
-See [Vulnerability Response Process](VULNERABILITY_RESPONSE_PROCESS.md).
-
-## Dex software updates and consensus protocol changes (hard fork schedule)
-
-Dex uses a fixed-schedule hard fork mechanism to implement new features. This means that users of Dex (end users and service providers) need to run current versions and update their software on a regular schedule. Here is the current schedule, versions, and compatibility.
-Dates are provided in the format YYYY-MM-DD. 
-
-
-| Fork Date              | Consensus version | Minimum Dex Version | Recommended Dex Version | Details            |  
-| ----------------- | ----------------- | ---------------------- | -------------------------- | ------------------ |
-| 2016-09-21        | v3                | v0.9.4                 | v0.10.0                    | Splits coinbase into denominations  |
-| 2017-01-05        | v4                | v0.10.1                 | v0.10.2.1                   | Allow normal and RingCT transactions |
-| 2017-04-15        | v5                | v0.10.3.0               | v0.10.3.1                    | Adjusted minimum blocksize and fee algorithm      |
-| 2017-09-21        | v6                | Not determined as of 2017-03-27                | Not determined as of 2017-03-27                    | Allow only RingCT transactions      |
 
 ## Installing Dex from a Package
 
