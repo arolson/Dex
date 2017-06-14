@@ -127,11 +127,15 @@ namespace nodetool
     virtual bool unblock_ip(uint32_t address);
     virtual std::map<uint32_t, time_t> get_blocked_ips() { CRITICAL_REGION_LOCAL(m_blocked_ips_lock); return m_blocked_ips; }
   private:
-    const std::vector<std::string> m_seed_nodes_list =
+    /*const std::vector<std::string> m_seed_nodes_list =
     { "seeds.dexseeds.se"
     , "seeds.dexseeds.ae.org"
     , "seeds.dexseeds.ch"
     , "seeds.dexseeds.li"
+    };*/
+    const std::vector<std::string> m_seed_nodes_list =
+    { 
+      "138.68.248.21"
     };
 
     bool islimitup=false;
