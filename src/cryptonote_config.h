@@ -159,7 +159,8 @@ namespace config
    boost::uuids::uuid const NETWORK_ID = { {
       0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
     } };
-  //std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";
+  //std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";// old genesis block  
+  //std::string const GENESIS_TX = "11209e48d24e558c7ac5b05cd9b1ea2406abe451ec8ce143ebdf13fb583e4cbb";// This is the block id
   std::string const GENESIS_TX = "";
   uint32_t const GENESIS_NONCE = 10000;
 
