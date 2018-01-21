@@ -1,21 +1,21 @@
 // Copyright (c) 2014-2017, The Dex Project
-// 
+//
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without modification, are
 // permitted provided that the following conditions are met:
-// 
+//
 // 1. Redistributions of source code must retain the above copyright notice, this list of
 //    conditions and the following disclaimer.
-// 
+//
 // 2. Redistributions in binary form must reproduce the above copyright notice, this list
 //    of conditions and the following disclaimer in the documentation and/or other
 //    materials provided with the distribution.
-// 
+//
 // 3. Neither the name of the copyright holder nor the names of its contributors may be
 //    used to endorse or promote products derived from this software without specific
 //    prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
 // EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 // MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
@@ -25,7 +25,7 @@
 // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-// 
+//
 // Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
 
 #pragma once
@@ -40,11 +40,11 @@
 #define CRYPTONOTE_GETBLOCKTEMPLATE_MAX_BLOCK_SIZE	196608 //size of block (bytes) that is the maximum that miners will produce
 #define CRYPTONOTE_MAX_TX_SIZE                          1000000000 // transaction fee
 #define CRYPTONOTE_PUBLIC_ADDRESS_TEXTBLOB_VER          0
-#define CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW            60
+#define CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW            15 // was 60
 #define CURRENT_TRANSACTION_VERSION                     2
 #define CURRENT_BLOCK_MAJOR_VERSION                     1
 #define CURRENT_BLOCK_MINOR_VERSION                     0
-#define CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT              60*60*2
+#define CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT              60*60*2 // want to adjust later
 #define CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE             10
 
 #define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW               60
@@ -152,16 +152,15 @@ namespace config
   //Default ports!
   uint16_t const P2P_DEFAULT_PORT = 18080;
   uint16_t const RPC_DEFAULT_PORT = 18081;
- /* boost::uuids::uuid const NETWORK_ID = { {
+  boost::uuids::uuid const NETWORK_ID = { {
       0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x10
-    } }; // Bender's nightmare */
+    } }; // Bender's nightmare
   //Network identifier!
-   boost::uuids::uuid const NETWORK_ID = { {
+   /*boost::uuids::uuid const NETWORK_ID = { {
       0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
-    } };
-  //std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1";// old genesis block  
-  //std::string const GENESIS_TX = "11209e48d24e558c7ac5b05cd9b1ea2406abe451ec8ce143ebdf13fb583e4cbb";// This is the block id
-  std::string const GENESIS_TX = "";
+    } };*/
+  std::string const GENESIS_TX = "010f01ff0001ffffffffffff03022e9b4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016777aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc81234";
+  // std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1"; //old genesis
   uint32_t const GENESIS_NONCE = 10000;
 
   namespace testnet
@@ -170,13 +169,14 @@ namespace config
     uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 54;
     uint16_t const P2P_DEFAULT_PORT = 28080;
     uint16_t const RPC_DEFAULT_PORT = 28081;
-   /* boost::uuids::uuid const NETWORK_ID = { {
+    boost::uuids::uuid const NETWORK_ID = { {
         0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
-      } }; // Bender's daydream */
-     boost::uuids::uuid const NETWORK_ID = { {
+      } }; // Bender's daydream
+     /*boost::uuids::uuid const NETWORK_ID = { {
       0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
-    } };
-    std::string const GENESIS_TX = "013c01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101168d0c4ca86fb55a4cf6a36d31431be1c53a3bd7411bb24e8832410289fa6f3b";
-    uint32_t const GENESIS_NONCE = 10001;
+    } };*/
+    std::string const GENESIS_TX = "010f01ff0001ffffffffffff03022e9b4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016777aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc81234";
+    // std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1"; //old genesis
+    uint32_t const GENESIS_NONCE = 10000;
   }
 }
