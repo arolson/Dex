@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -75,7 +75,7 @@ namespace wallet_args
     const boost::program_options::positional_options_description& positional_options,
     const char *default_log_name,
     bool log_to_console)
-  
+
   {
     namespace bf = boost::filesystem;
     namespace po = boost::program_options;

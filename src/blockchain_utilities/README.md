@@ -1,6 +1,6 @@
 # Dex Blockchain Utilities
 
-Copyright (c) 2014-2017, The Dex Project
+Copyright (c) 2014-2017, The Dex Project based on Copyright (c) 2014-2017, The Monero Project
 
 ## Introduction
 

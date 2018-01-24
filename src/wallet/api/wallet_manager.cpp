@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -72,7 +72,7 @@ Wallet *WalletManagerImpl::openWallet(const std::string &path, const std::string
     WalletImpl * wallet = new WalletImpl(testnet);
     wallet->open(path, password);
     //Refresh addressBook
-    wallet->addressBook()->refresh(); 
+    wallet->addressBook()->refresh();
     return wallet;
 }
 
@@ -86,9 +86,9 @@ Wallet *WalletManagerImpl::recoveryWallet(const std::string &path, const std::st
     return wallet;
 }
 
-Wallet *WalletManagerImpl::createWalletFromKeys(const std::string &path, 
+Wallet *WalletManagerImpl::createWalletFromKeys(const std::string &path,
                                                 const std::string &language,
-                                                bool testnet, 
+                                                bool testnet,
                                                 uint64_t restoreHeight,
                                                 const std::string &addressString,
                                                 const std::string &viewKeyString,

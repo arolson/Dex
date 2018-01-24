@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -439,7 +439,7 @@ std::string get_account_address_as_str_from_url(const std::string& url, bool& dn
          << tr(" Dex Address = ") << addresses[0]
          << std::endl
          << tr("Is this OK? (Y/n) ")
-  ;  
+  ;
   // prompt the user for confirmation given the dns query and dnssec status
   std::string confirm_dns_ok = command_line::input_line(prompt.str());
   if (std::cin.eof())

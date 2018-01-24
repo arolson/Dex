@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -163,4 +163,3 @@ bool BlocksdatFile::store_blockchain_raw(Blockchain* _blockchain_storage, tx_mem
 
   return BlocksdatFile::close();
 }
-

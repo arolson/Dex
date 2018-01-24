@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -134,7 +134,7 @@ namespace nodetool
     , "seeds.dexseeds.li"
     };*/
     const std::vector<std::string> m_seed_nodes_list =
-    { 
+    {
       "165.227.25.101"
     };
 

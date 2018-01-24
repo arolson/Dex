@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -54,7 +54,7 @@ namespace cryptonote
   {
     const descriptors arg{};
     rpc_args config{};
-    
+
     config.bind_ip = command_line::get_arg(vm, arg.rpc_bind_ip);
     if (!config.bind_ip.empty())
     {

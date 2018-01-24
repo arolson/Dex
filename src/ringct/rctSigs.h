@@ -1,4 +1,4 @@
-// Copyright (c) 2016, Dex Research Labs
+// Copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
 //
@@ -136,4 +136,3 @@ namespace rct {
     xmr_amount decodeRctSimple(const rctSig & rv, const key & sk, unsigned int i);
 }
 #endif  /* RCTSIGS_H */
-

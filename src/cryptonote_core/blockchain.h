@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -756,7 +756,7 @@ namespace cryptonote
      * @param earliest_height the earliest height at which <version> is allowed
      * @param voting which version this node is voting for/using
      *
-     * @return whether the version queried is enabled 
+     * @return whether the version queried is enabled
      */
     bool get_hard_fork_voting_info(uint8_t version, uint32_t &window, uint32_t &votes, uint32_t &threshold, uint64_t &earliest_height, uint8_t &voting) const;
 

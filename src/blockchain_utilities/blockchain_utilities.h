@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -36,4 +36,3 @@
 #define BUFFER_SIZE 1000000
 #define NUM_BLOCKS_PER_CHUNK 1
 #define BLOCKCHAIN_RAW "blockchain.raw"
-

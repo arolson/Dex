@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -39,7 +39,7 @@ namespace Dex {
 namespace Utils {
 
 bool isAddressLocal(const std::string &address)
-{ 
+{
     try {
         return tools::is_local_address(address);
     } catch (const std::exception &e) {

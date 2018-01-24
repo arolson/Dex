@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -60,7 +60,7 @@ public:
     bool recover(const std::string &path, const std::string &seed);
     bool recoverFromKeys(const std::string &path,
                             const std::string &language,
-                            const std::string &address_string, 
+                            const std::string &address_string,
                             const std::string &viewkey_string,
                             const std::string &spendkey_string = "");
     bool close();
@@ -140,7 +140,7 @@ private:
 
 private:
     friend class PendingTransactionImpl;
-    friend class UnsignedTransactionImpl;    
+    friend class UnsignedTransactionImpl;
     friend class TransactionHistoryImpl;
     friend struct Wallet2CallbackImpl;
     friend class AddressBookImpl;
@@ -183,4 +183,3 @@ private:
 namespace Bitdex = Dex;
 
 #endif
-

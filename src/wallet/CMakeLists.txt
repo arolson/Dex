@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2017, The Dex Project
+# Copyright (c) 2014-2017, The Monero Project
 #
 # All rights reserved.
 #
@@ -45,7 +45,7 @@ set(wallet_sources
 
 set(wallet_api_headers
     wallet2_api.h)
-    
+
 
 set(wallet_private_headers
   wallet2.h

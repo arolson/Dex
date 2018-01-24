@@ -25,7 +25,7 @@
 # INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 # STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
+# Based on Copyright (c) 2014-2017, The Monero Project
 set(crypto_sources
   aesb.c
   blake256.c
@@ -91,12 +91,10 @@ if (ARM)
 endif()
 
 # Because of the way Qt works on android with JNI, the code does not live in the main android thread
-# So this code runs with a 1 MB default stack size. 
+# So this code runs with a 1 MB default stack size.
 # This will force the use of the heap for the allocation of the scratchpad
 if (ANDROID OR IOS)
   if( BUILD_GUI_DEPS )
     add_definitions(-DFORCE_USE_HEAP=1)
   endif()
 endif()
-
-

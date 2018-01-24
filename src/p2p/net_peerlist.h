@@ -1,21 +1,21 @@
-// Copyright (c) 2014-2017, The Dex Project
-// 
+// Copyright (c) 2014-2017, The Monero Project
+//
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without modification, are
 // permitted provided that the following conditions are met:
-// 
+//
 // 1. Redistributions of source code must retain the above copyright notice, this list of
 //    conditions and the following disclaimer.
-// 
+//
 // 2. Redistributions in binary form must reproduce the above copyright notice, this list
 //    of conditions and the following disclaimer in the documentation and/or other
 //    materials provided with the distribution.
-// 
+//
 // 3. Neither the name of the copyright holder nor the names of its contributors may be
 //    used to endorse or promote products derived from this software without specific
 //    prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
 // EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 // MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
@@ -25,7 +25,7 @@
 // INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 // STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-// 
+//
 // Parts of this file are originally copyright (c) 2012-2013 The Cryptonote developers
 
 #pragma once
@@ -65,7 +65,7 @@ namespace nodetool
   /************************************************************************/
   class peerlist_manager
   {
-  public: 
+  public:
     bool init(bool allow_local_ip);
     bool deinit();
     size_t get_white_peers_count(){CRITICAL_REGION_LOCAL(m_peerlist_lock); return m_peers_white.size();}
@@ -86,7 +86,7 @@ namespace nodetool
     bool remove_from_peer_gray(const peerlist_entry& pe);
     bool get_and_empty_anchor_peerlist(std::vector<anchor_peerlist_entry>& apl);
     bool remove_from_peer_anchor(const net_address& addr);
-    
+
   private:
     struct by_time{};
     struct by_id{};
@@ -133,7 +133,7 @@ namespace nodetool
       boost::multi_index::ordered_unique<boost::multi_index::tag<by_addr>, boost::multi_index::member<peerlist_entry,net_address,&peerlist_entry::adr> >,
       // sort by peerlist_entry::last_seen<
       boost::multi_index::ordered_non_unique<boost::multi_index::tag<by_time>, boost::multi_index::member<peerlist_entry,int64_t,&peerlist_entry::last_seen> >
-      > 
+      >
     > peers_indexed;
 
     typedef boost::multi_index_container<
@@ -145,7 +145,7 @@ namespace nodetool
       boost::multi_index::ordered_unique<boost::multi_index::tag<by_addr>, boost::multi_index::member<peerlist_entry,net_address,&peerlist_entry::adr> >,
       // sort by peerlist_entry::last_seen<
       boost::multi_index::ordered_non_unique<boost::multi_index::tag<by_time>, boost::multi_index::member<peerlist_entry,int64_t,&peerlist_entry::last_seen> >
-      > 
+      >
     > peers_indexed_old;
 
     typedef boost::multi_index_container<
@@ -157,8 +157,8 @@ namespace nodetool
       boost::multi_index::ordered_non_unique<boost::multi_index::tag<by_time>, boost::multi_index::member<anchor_peerlist_entry,int64_t,&anchor_peerlist_entry::first_seen> >
       >
     > anchor_peers_indexed;
-  public:    
-    
+  public:
+
     template <class Archive, class t_version_type>
     void serialize(Archive &a,  const t_version_type ver)
     {
@@ -168,7 +168,7 @@ namespace nodetool
       if(ver < 4)
       {
         //loading data from old storage
-        peers_indexed_old pio; 
+        peers_indexed_old pio;
         a & pio;
         peers_indexed_from_old(pio, m_peers_white);
         return;
@@ -184,7 +184,7 @@ namespace nodetool
       a & m_peers_anchor;
     }
 
-  private: 
+  private:
     bool peers_indexed_from_old(const peers_indexed_old& pio, peers_indexed& pi);
     void trim_white_peerlist();
     void trim_gray_peerlist();
@@ -205,7 +205,7 @@ namespace nodetool
   {
     m_allow_local_ip = allow_local_ip;
     return true;
-  } 
+  }
   //--------------------------------------------------------------------------------------------------
   inline
     bool peerlist_manager::deinit()
@@ -213,7 +213,7 @@ namespace nodetool
     return true;
   }
   //--------------------------------------------------------------------------------------------------
-  inline 
+  inline
   bool peerlist_manager::peers_indexed_from_old(const peers_indexed_old& pio, peers_indexed& pi)
   {
     for(auto x: pio)
@@ -246,7 +246,7 @@ namespace nodetool
     }
   }
   //--------------------------------------------------------------------------------------------------
-  inline 
+  inline
   bool peerlist_manager::merge_peerlist(const std::list<peerlist_entry>& outer_bs)
   {
     CRITICAL_REGION_LOCAL(m_peerlist_lock);
@@ -255,7 +255,7 @@ namespace nodetool
       append_with_peer_gray(be);
     }
     // delete extra elements
-    trim_gray_peerlist();    
+    trim_gray_peerlist();
     return true;
   }
   //--------------------------------------------------------------------------------------------------
@@ -267,7 +267,7 @@ namespace nodetool
       return false;
 
     peers_indexed::index<by_time>::type& by_time_index = m_peers_white.get<by_time>();
-    p = *epee::misc_utils::move_it_backward(--by_time_index.end(), i);    
+    p = *epee::misc_utils::move_it_backward(--by_time_index.end(), i);
     return true;
   }
   //--------------------------------------------------------------------------------------------------
@@ -279,11 +279,11 @@ namespace nodetool
       return false;
 
     peers_indexed::index<by_time>::type& by_time_index = m_peers_gray.get<by_time>();
-    p = *epee::misc_utils::move_it_backward(--by_time_index.end(), i);    
+    p = *epee::misc_utils::move_it_backward(--by_time_index.end(), i);
     return true;
   }
   //--------------------------------------------------------------------------------------------------
-  inline 
+  inline
   bool peerlist_manager::is_ip_allowed(uint32_t ip)
   {
     //never allow loopback ip
@@ -296,10 +296,10 @@ namespace nodetool
     return true;
   }
   //--------------------------------------------------------------------------------------------------
-  inline 
+  inline
   bool peerlist_manager::get_peerlist_head(std::list<peerlist_entry>& bs_head, uint32_t depth)
   {
-    
+
     CRITICAL_REGION_LOCAL(m_peerlist_lock);
     peers_indexed::index<by_time>::type& by_time_index=m_peers_white.get<by_time>();
     uint32_t cnt = 0;
@@ -318,18 +318,18 @@ namespace nodetool
   //--------------------------------------------------------------------------------------------------
   inline
   bool peerlist_manager::get_peerlist_full(std::list<peerlist_entry>& pl_gray, std::list<peerlist_entry>& pl_white)
-  {    
+  {
     CRITICAL_REGION_LOCAL(m_peerlist_lock);
     peers_indexed::index<by_time>::type& by_time_index_gr=m_peers_gray.get<by_time>();
     for(const peers_indexed::value_type& vl: boost::adaptors::reverse(by_time_index_gr))
     {
-      pl_gray.push_back(vl);      
+      pl_gray.push_back(vl);
     }
 
     peers_indexed::index<by_time>::type& by_time_index_wt=m_peers_white.get<by_time>();
     for(const peers_indexed::value_type& vl: boost::adaptors::reverse(by_time_index_wt))
     {
-      pl_white.push_back(vl);      
+      pl_white.push_back(vl);
     }
 
     return true;
@@ -375,8 +375,8 @@ namespace nodetool
       trim_white_peerlist();
     }else
     {
-      //update record in white list 
-      m_peers_white.replace(by_addr_it_wt, ple);      
+      //update record in white list
+      m_peers_white.replace(by_addr_it_wt, ple);
     }
     //remove from gray list, if need
     auto by_addr_it_gr = m_peers_gray.get<by_addr>().find(ple.adr);
@@ -407,11 +407,11 @@ namespace nodetool
     {
       //put new record into white list
       m_peers_gray.insert(ple);
-      trim_gray_peerlist();    
+      trim_gray_peerlist();
     }else
     {
-      //update record in white list 
-      m_peers_gray.replace(by_addr_it_gr, ple);      
+      //update record in white list
+      m_peers_gray.replace(by_addr_it_gr, ple);
     }
     return true;
     CATCH_ENTRY_L0("peerlist_manager::append_with_peer_gray()", false);

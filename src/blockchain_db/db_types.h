@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -32,7 +32,7 @@
 namespace cryptonote
 {
 
-  const std::unordered_set<std::string> blockchain_db_types = 
+  const std::unordered_set<std::string> blockchain_db_types =
   { "lmdb"
   };
 

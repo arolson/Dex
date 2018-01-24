@@ -1,4 +1,4 @@
-# Copyright (c) 2016, The Dex Project
+# Copyright (c) 2016, The Monero Project
 #
 # All rights reserved.
 #

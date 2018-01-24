@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017, The Dex Project
+// Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
 //
@@ -41,9 +41,9 @@ public:
                           const std::string &language, bool testnet);
     Wallet * openWallet(const std::string &path, const std::string &password, bool testnet);
     virtual Wallet * recoveryWallet(const std::string &path, const std::string &memo, bool testnet, uint64_t restoreHeight);
-    virtual Wallet * createWalletFromKeys(const std::string &path, 
+    virtual Wallet * createWalletFromKeys(const std::string &path,
                                                     const std::string &language,
-                                                    bool testnet, 
+                                                    bool testnet,
                                                     uint64_t restoreHeight,
                                                     const std::string &addressString,
                                                     const std::string &viewKeyString,

@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2017, The Dex Project
+# Copyright (c) 2014-2017, The Monero Project
 #
 # All rights reserved.
 #
@@ -129,4 +129,3 @@ add_dependencies(cn_deserialize
 set_property(TARGET cn_deserialize
 	PROPERTY
 	OUTPUT_NAME "dex-utils-deserialize")
-
