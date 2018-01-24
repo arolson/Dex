@@ -10,11 +10,11 @@ May 2017 The Dex Project
 The emergence of blockchain and open ledger adoption by the masses has opened the doors to solutions previously marginalized for the prevention of identity theft. A hybrid version of blockchain networks and open ledger technology presents the answer which can end identity theft.
 
 ## Summary
- 
+
 The technology we propose allows anyone in the world with a smartphone to enter themselves into a secure blockchain and open ledger system with a fingerprint and photo (taken in-app). Other documents are also allowed into the system for each person.
- 
+
 Retailers can make money helping their customers use this system for transactions! Miners (only verification) will make money from the system.
- 
+
 An exchange and wallet will be available to convert any fiat or cryptocurrency into our cryptocurrency “Dex” central to our system. Fees for conversion will be lower than commonly found to-date at a fraction of current rates because our cryptocurrency has transaction fees built in.
 
 
@@ -40,7 +40,7 @@ Installing a snap is very quick. Snaps are secure. They are isolated with all of
 * Docker
 
         docker build -t dex .
-     
+
         # either run in foreground
         docker run -it -v /dex/chain:/root/.bitdex -v /dex/wallet:/wallet -p 18080:18080 dex
 
@@ -133,7 +133,7 @@ Tested on a Raspberry Pi 2 with a clean install of minimal Debian Jessie from ht
 * Install the dependencies for Dex except libunwind and libboost-all-dev
 
 * Increase the system swap size:
-```	
+```
 	sudo /etc/init.d/dphys-swapfile stop  
 	sudo nano /etc/dphys-swapfile  
 	CONF_SWAPSIZE=1024  
@@ -199,7 +199,7 @@ application.
         pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost
 
     To build for 32-bit Windows:
- 
+
         pacman -S mingw-w64-i686-toolchain make mingw-w64-i686-cmake mingw-w64-i686-boost
 
 * Open the MingW shell via `MinGW-w64-Win64 Shell` shortcut on 64-bit Windows
@@ -324,7 +324,7 @@ Run the build.
 Once it stalls, enter the following command:
 
 ```
-gdb /path/to/dexd `pidof dexd` 
+gdb /path/to/dexd `pidof dexd`
 ```
 
 Type `thread apply all bt` within gdb in order to obtain the stack trace
@@ -370,3 +370,10 @@ The output of `mdb_stat -ea <path to blockchain dir>` will indicate inconsistenc
 The output of `mdb_dump -s blocks <path to blockchain dir>` and `mdb_dump -s block_info <path to blockchain dir>` is useful for indicating whether blocks and block_info contain the same keys.
 
 These records are dumped as hex data, where the first line is the key and the second line is the data.
+
+# License
+First off we want to say a big thank you to both the developers of Monero and Cryptonote
+Projects. For which this project is solely based on.
+Copyright (c) 2017-2018, The Dex Project
+copyright (c) 2012-2013 The Cryptonote
+Copyright (c) 2014-2017, The Monero Project
