@@ -17,38 +17,6 @@ Retailers can make money helping their customers use this system for transaction
 
 An exchange and wallet will be available to convert any fiat or cryptocurrency into our cryptocurrency “Dex” central to our system. Fees for conversion will be lower than commonly found to-date at a fraction of current rates because our cryptocurrency has transaction fees built in.
 
-
-## Installing Dex from a Package
-
-Packages are available for
-
-* Ubuntu and [snap supported](https://snapcraft.io/docs/core/install) systems, via a community contributed build.
-
-    snap install dex --beta
-
-Installing a snap is very quick. Snaps are secure. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
-
-* Arch Linux (via [AUR](https://aur.archlinux.org/)):
-  - Stable release: [`dex`](https://aur.archlinux.org/packages/dex)
-  - Bleeding edge: [`bitdex-git`](https://aur.archlinux.org/packages/bitdex-git)
-
-* OS X via [Homebrew](http://brew.sh)
-
-        brew tap sammy007/cryptonight
-        brew install dex --build-from-source
-
-* Docker
-
-        docker build -t dex .
-
-        # either run in foreground
-        docker run -it -v /dex/chain:/root/.bitdex -v /dex/wallet:/wallet -p 18080:18080 dex
-
-        # or in background
-        docker run -it -d -v /dex/chain:/root/.bitdex -v /dex/wallet:/wallet -p 18080:18080 dex
-
-Packaging for your favorite distribution would be a welcome contribution!
-
 ## Compiling Dex from Source
 
 ### Dependencies

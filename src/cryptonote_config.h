@@ -50,7 +50,7 @@
 #define BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW               60
 
 // MONEY_SUPPLY - total number coins to be generated
-#define MONEY_SUPPLY                                    ((uint64_t)(-1))
+#define MONEY_SUPPLY                                    ((uint64_t)(-1) * 100)// * 100
 #define EMISSION_SPEED_FACTOR_PER_MINUTE                (20)
 #define FINAL_SUBSIDY_PER_MINUTE                        ((uint64_t)300000000000) // 3 * pow(10, 11)
 
@@ -73,7 +73,7 @@
 
 
 #define DIFFICULTY_TARGET_V2                            15  // seconds: was 120
-#define DIFFICULTY_TARGET_V1                            60  // seconds - before first fork
+#define DIFFICULTY_TARGET_V1                            5  // seconds - before first fork
 #define DIFFICULTY_WINDOW                               5760 // blocks: was 720
 #define DIFFICULTY_LAG                                  15  // !!!
 #define DIFFICULTY_CUT                                  60  // timestamps to cut after sorting
@@ -156,9 +156,9 @@ namespace config
       0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x10
     } }; // Bender's nightmare
   //Network identifier!
-   /*boost::uuids::uuid const NETWORK_ID = { {
-      0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
-    } };*/
+   // boost::uuids::uuid const NETWORK_ID = { {
+   //    0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
+   //  } };
   std::string const GENESIS_TX = "010f01ff0001ffffffffffff03022e9b4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016777aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc81234";
   // std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1"; //old genesis
   uint32_t const GENESIS_NONCE = 10000;
@@ -172,9 +172,9 @@ namespace config
     boost::uuids::uuid const NETWORK_ID = { {
         0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
       } }; // Bender's daydream
-     /*boost::uuids::uuid const NETWORK_ID = { {
-      0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
-    } };*/
+    //  boost::uuids::uuid const NETWORK_ID = { {
+    //   0x21, 0x29, 0xF2, 0x17, 0x64, 0x03, 0x40, 0x60, 0xA1, 0x16, 0x30, 0x01, 0x81, 0x15, 0xA0, 0x10
+    // } };
     std::string const GENESIS_TX = "010f01ff0001ffffffffffff03022e9b4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016777aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc81234";
     // std::string const GENESIS_TX = "013c01ff0001ffffffffffff03029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121017767aafcde9be00dcfd098715ebcf7f410daebc582fda69d24a28e9d0bc890d1"; //old genesis
     uint32_t const GENESIS_NONCE = 10000;
